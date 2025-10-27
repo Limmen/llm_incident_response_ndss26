@@ -17,23 +17,12 @@ We introduce a novel method that enables the effective use of a large language m
 - Python code for fine-tuning a new model based on our dataset (`fine_tune_llm.py`).
 - [Video demonstration](https://www.youtube.com/watch?v=SCxq2ye-R4Y&) of our LLM-based decision-support system for incident response.
 
-<div style="border-left: 4px solid #f39c12; padding: 0.5em 1em; background: #fffbea;">
-<b>Remark 1:</b> If the artifact evaluator has access to a GPU, they can run <code>response_generation.py</code> and <code>fine_tune_llm.py</code> to test the LLM.
-If the evaluator <strong>does not</strong> have access to a GPU. We ask the evaluator to check the youtube video linked above to verify the funcionality of the last two Python scripts.
-</div>
 
-$\quad$
+> **Remark 1**: If the artifact evaluator has access to a GPU, they can run <code>response_generation.py</code> and <code>fine_tune_llm.py</code> to test the LLM. If the evaluator **does not** have access to a GPU. We ask the evaluator to check the youtube video linked above to verify the funcionality of the last two Python scripts.
 
-<div style="border-left: 4px solid #4CAF50; padding: 0.5em 1em; background: #e6ffea;">
-<b>Remark 2 :</b> The software libraries that support our artifacts are open-source and available at
+> **Remark 2**:  The software libraries that support our artifacts are open-source and available at https://github.com/Limmen/csle and https://github.com/Limmen/llm_recovery </li>
+**(We do not ask the artifact evaluator to verify these libraries.)**
 
-<ul>
-<li> https://github.com/Limmen/csle </li>
-<li> https://github.com/Limmen/llm_recovery </li>
-</ul>
-<strong>(We do not ask the artifact evaluator to verify these libraries.)</strong>
-
-</div>
 
 ## Requirements
 
