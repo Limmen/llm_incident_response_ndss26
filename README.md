@@ -12,7 +12,7 @@ Our artifacts include:
 - Python code for fine-tuning a new model based on our dataset (`fine_tune_llm.py`).
 
 <p align="center">
-<img src="img/system.png" width="70%" height="70%">
+<img src="img/system.png" width="100%" height="100%">
 </p>
 
 # Requirements
