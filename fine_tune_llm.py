@@ -11,8 +11,8 @@ if __name__ == '__main__':
     device_map = {"": 0}
     tokenizer, llm = LoadLLM.load_llm(llm_name=constants.LLM.DEEPSEEK_14B_QWEN, device_map=device_map)
     dataset = load_dataset("kimhammar/CSLE-IncidentResponse-V1", data_files="examples_16_june.json")
-    instructions = dataset["train"]["instructions"][0:5]
-    answers = dataset["train"]["answers"][0:5]
+    instructions = dataset["train"]["instructions"][0][0:5]
+    answers = dataset["train"]["answers"][0][0:5]
     lora_rank = 64
     lora_alpha = 128
     lora_dropout = 0.05

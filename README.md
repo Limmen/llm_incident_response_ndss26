@@ -18,8 +18,21 @@ We introduce a novel method that enables the effective use of a large language m
 - [Video demonstration](https://www.youtube.com/watch?v=SCxq2ye-R4Y&) of our LLM-based decision-support system for incident response.
 
 <div style="border-left: 4px solid #f39c12; padding: 0.5em 1em; background: #fffbea;">
-<b>Remark:</b> If the artifact evaluator has access to a GPU, they can run <code>response_generation.py</code> and <code>fine_tune_llm.py</code> to test the LLM.
+<b>Remark 1:</b> If the artifact evaluator has access to a GPU, they can run <code>response_generation.py</code> and <code>fine_tune_llm.py</code> to test the LLM.
 If the evaluator <strong>does not</strong> have access to a GPU. We ask the evaluator to check the youtube video linked above to verify the funcionality of the last two Python scripts.
+</div>
+
+$\quad$
+
+<div style="border-left: 4px solid #4CAF50; padding: 0.5em 1em; background: #e6ffea;">
+<b>Remark 2 :</b> The software libraries that support our artifacts are open-source and available at
+
+<ul>
+<li> https://github.com/Limmen/csle </li>
+<li> https://github.com/Limmen/llm_recovery </li>
+</ul>
+<strong>(We do not ask the artifact evaluator to verify these libraries.)</strong>
+
 </div>
 
 ## Requirements
@@ -122,7 +135,14 @@ python fine_tune_llm.py
 
 Expected output:
 ```bash
-TODO
+⋊> kim@gpu1 ⋊> ~/llm_incident_response_ndss26 on main ⨯ python fine_tune_llm.py                         (base) 20:14:06
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 4/4 [00:35<00:00,  8.85s/it]
+Trainable parameters: 50331648
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+Step: 1, Epoch: 0.5000, Progress: 50.0%, Avg_loss=0.5480, LR=0.00095000, Grad_norm=0.3354, minutes: 0.7959
+Step: 2, Epoch: 1.0000, Progress: 100.0%, Avg_loss=0.7036, LR=0.00047500, Grad_norm=0.4813, minutes: 1.2205
+⋊> kim@gpu2 ⋊> ~/llm_incident_response_ndss26 on main ⨯  
 ```
 
 ## Authors
