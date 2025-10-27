@@ -110,11 +110,11 @@ Contact: kimham@kth.se
 ---
 <p align="center" style="align-items:center; display:inline-block">
 Made with &#10084; &nbsp;
-at &nbsp; <a href="https://www.kth.se/" target="_blank">
+at &nbsp; <a href="https://www.unimelb.edu.au/" target="_blank">
 <img align="absmiddle" src="img/unimelb.png" width="25%" height="25%">
 </a>
 &nbsp; and 
-&nbsp;<a href="https://www.kth.se/cdis" target="_blank">
-<img align="absmiddle" src="img/iperial.png" width="40%" height="40%">
+&nbsp;<a href="https://www.imperial.ac.uk/" target="_blank">
+<img align="absmiddle" src="img/imperial.png" width="40%" height="40%">
 </a>
 </p>
