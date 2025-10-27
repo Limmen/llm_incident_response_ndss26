@@ -3,17 +3,18 @@
 This repository contains the artifacts related to the paper *"Incident Response Planning Using a Lightweight Large Language Model with Reduced Hallucination"*, which is conditionally accepted to The Network and Distributed System Security (NDSS) Symposium 2026. 
 We introduce a novel method that enables the effective use of a large language model (LLM) to provide decision support for incident response planning. Our method uses the LLM for translating system logs into effective response plans while addressing its limitations through fine-tuning, information retrieval, and decision-theoretic planning. Unlike prior work, which relies on prompt engineering of frontier models, our method is lightweight and can run on commodity hardware.
 
-Our artifacts include: 
+<p align="center">
+<img src="img/system.png" width="100%" height="100%">
+</p>
+
+## Artifacts 
+
 - The first public fine-tuning dataset of incidents and response actions. This is the dataset we use to produce the results in the paper. The dataset can be downloaded [here](https://huggingface.co/datasets/kimhammar/CSLE-IncidentResponse-V1).
 - The weights of the fine-tuned model, which can be downloaded [here](https://huggingface.co/kimhammar/LLMIncidentResponse).
 - Python code for downloading the training dataset (`load_training_dataset.py`).
 - Python code for downloading the fine-tuned model and using it to generate an incident response plan (`load_fine_tuned_llm.py`).
 - Python code for generating an incident response plan (`response_generation.py`).
 - Python code for fine-tuning a new model based on our dataset (`fine_tune_llm.py`).
-
-<p align="center">
-<img src="img/system.png" width="100%" height="100%">
-</p>
 
 # Requirements
 
