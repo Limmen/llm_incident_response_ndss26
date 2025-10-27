@@ -16,7 +16,7 @@ We introduce a novel method that enables the effective use of a large language m
 - Python code for generating an incident response plan (`response_generation.py`).
 - Python code for fine-tuning a new model based on our dataset (`fine_tune_llm.py`).
 
-# Requirements
+## Requirements
 
 - Python 3.8+
 - `load_training_dataset.py` requires 1 GB of storage and a commodity CPU.
@@ -29,16 +29,16 @@ We have tested the Python scripts on the following platforms:
 - MacOs Sequoia with Python 3.9.
 - Ubuntu 22.04 with Python 3.9.
 
-# Installation
+## Installation
 
 To install the required python libraries, run the following command:
 ```bash
 pip install llm_recovery==0.0.6
 ```
 
-# Execution 
+## Execution 
 
-## Loading the fine-tuned LLM
+### Loading the fine-tuned LLM
 
 Command:
 ```bash
@@ -50,7 +50,7 @@ Expected output:
 TODO
 ```
 
-## Loading the fine-tuning dataset
+### Loading the fine-tuning dataset
 
 Command:
 ```bash
@@ -62,7 +62,7 @@ Expected output:
 TODO
 ```
 
-## Response generation
+### Response generation
 
 Command:
 ```bash
@@ -74,7 +74,7 @@ Expected output:
 TODO
 ```
 
-## Fine-tuning X on our dataset
+### Fine-tuning DeepSeek-R1-Distill-Qwen-14B on our incident response dataset
 
 Command:
 ```bash
@@ -86,10 +86,9 @@ Expected output:
 TODO
 ```
 
-
 ## Authors
 
-Kim Hamar, Tansu Alpcan, and Emil Lupu. 
+Kim Hammar, Tansu Alpcan, and Emil Lupu. 
 
 Contact: kimham@kth.se
 
