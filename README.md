@@ -15,6 +15,12 @@ We introduce a novel method that enables the effective use of a large language m
 - Python code for downloading the fine-tuned model and using it to generate an incident response plan (`load_fine_tuned_llm.py`).
 - Python code for generating an incident response plan (`response_generation.py`).
 - Python code for fine-tuning a new model based on our dataset (`fine_tune_llm.py`).
+- [Video demonstration](https://www.youtube.com/watch?v=SCxq2ye-R4Y&) of our LLM-based decision-support system for incident response.
+
+<div style="border-left: 4px solid #f39c12; padding: 0.5em 1em; background: #fffbea;">
+<b>Remark:</b> If the artifact evaluator has access to a GPU, they can run <code>response_generation.py</code> and <code>fine_tune_llm.py</code> to test the LLM.
+If the evaluator <strong>does not</strong> have access to a GPU. We ask the evaluator to check the youtube video linked above to verify the funcionality of the last two Python scripts.
+</div>
 
 ## Requirements
 
@@ -31,8 +37,9 @@ We have tested the Python scripts on the following platforms:
 
 ## Installation
 
-To install the required python libraries, run the following command:
+To download this repository and install the required python libraries, run the following commands:
 ```bash
+git clone https://github.com/Limmen/llm_incident_response_ndss26
 pip install llm_recovery==0.0.6
 ```
 
@@ -47,8 +54,22 @@ python load_fine_tuned_llm.py
 
 Expected output:
 ```bash
-TODO
+⋊> kim@gpu1 ⋊> ~/llm_incident_response_ndss26 on main ◦ python load_fine_tuned_llm.py                   (base) 19:25:01
+Loading the fine-tuned incident response LLM.
+adapter_config.json: 100%|████████████████████████████████████████████████████████████| 797/797 [00:00<00:00, 4.08MB/s]
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 4/4 [00:59<00:00, 14.78s/it]
+/home/kim/anaconda3/lib/python3.11/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+adapter_model.safetensors:   0%|                                                            | 0.00/201M [00:00<?, ?B/s]/home/kim/anaconda3/lib/python3.11/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+adapter_model.safetensors: 100%|████████████████████████████████████████████████████| 201M/201M [00:04<00:00, 47.9MB/s]
+tokenizer_config.json: 4.49kB [00:00, 14.2MB/s]
+tokenizer.json: 100%|█████████████████████████████████████████████████████████████| 11.4M/11.4M [00:01<00:00, 6.47MB/s]
+special_tokens_map.json: 100%|████████████████████████████████████████████████████████| 371/371 [00:00<00:00, 2.24MB/s]
+chat_template.jinja: 2.25kB [00:00, 6.30MB/s]
+LLM loaded successfully.
 ```
+> **📝 NOTE:** Depending on your internet connection, the above command may take a couple of minutes to complete. You will see the download progress in your terminal.
 
 ### Loading the fine-tuning dataset
 
@@ -59,8 +80,15 @@ python load_training_dataset.py
 
 Expected output:
 ```bash
-TODO
+⋊> kim@gpu1 ⋊> ~/llm_incident_response_ndss26 on main ◦ python load_training_dataset.py                 (base) 19:26:24
+Loading training dataset.
+README.md: 100%|█████████████████████████████████████████████████████████████████████| 33.0/33.0 [00:00<00:00, 187kB/s]
+examples_16_june.json: 100%|█████████████████████████████████████████████████████████| 536M/536M [00:03<00:00, 145MB/s]
+Generating train split: 1 examples [00:06,  6.32s/ examples]
+Training dataset loaded successfully.
 ```
+
+> **📝 NOTE:** Depending on your internet connection, the above command may take a couple of minutes to complete. You will see the download progress in your terminal.
 
 ### Response generation
 
@@ -69,9 +97,20 @@ Command:
 python response_generation.py
 ```
 
-Expected output:
+Expected output (example):
 ```bash
-TODO
+⋊> kim@gpu1 ⋊> ~/llm_incident_response_ndss26 on main ◦ python response_generation.py                   (base) 19:28:50
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 4/4 [00:05<00:00,  1.47s/it]
+/home/kim/anaconda3/lib/python3.11/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+/home/kim/anaconda3/lib/python3.11/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+I recognize that while the attack is contained, I do not yet have enough information to fully understand or eradicate it. Therefore, I choose to acquire full disk and memory images along with relevant logs, preserving evidence in a forensically sound manner to support analysis.</think>
+{
+    "Action": "Acquire full disk and memory images of 10.20.11.42 and export DNS, firewall, and NetFlow logs to write-protected storage.",
+    "Explanation": "Capturing images and logs secures evidence for later analysis and legal requirements."
+}⏎
 ```
 
 ### Fine-tuning DeepSeek-R1-Distill-Qwen-14B on our incident response dataset
