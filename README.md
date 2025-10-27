@@ -134,6 +134,10 @@ Step: 2, Epoch: 1.0000, Progress: 100.0%, Avg_loss=0.7036, LR=0.00047500, Grad_n
 ⋊> kim@gpu2 ⋊> ~/llm_incident_response_ndss26 on main ⨯  
 ```
 
+## DOI
+
+https://doi.org/10.5281/zenodo.17459636
+
 ## Authors
 
 Kim Hammar, Tansu Alpcan, and Emil Lupu. 
